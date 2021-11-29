@@ -12,3 +12,21 @@ def gethumid(request):
 def getmoist(request):
     devicestatus = DeviceStatus.objects.get(device_id='d000')
     return HttpResponse(str(devicestatus.moist))
+
+def updatetemp(request,temp):
+    devicestatus = DeviceStatus.objects.get(device_id='d000')
+    devicestatus.temp = float(temp)
+    devicestatus.save()
+    return HttpResponse(str(temp))
+
+def updatehumid(request,humid):
+    devicestatus = DeviceStatus.objects.get(device_id='d000')
+    devicestatus.humid = float(humid)
+    devicestatus.save()
+    return HttpResponse(str(humid))
+
+def updatemoist(request,moist):
+    devicestatus = DeviceStatus.objects.get(device_id='d000')
+    devicestatus.moist = float(moist)
+    devicestatus.save()
+    return HttpResponse(str(moist))
