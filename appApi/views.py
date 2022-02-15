@@ -30,3 +30,12 @@ def updatemoist(request,moist):
     devicestatus.moist = float(moist)
     devicestatus.save()
     return HttpResponse(str(moist))
+
+def toggleswitch(request):
+    devicestatus = DeviceStatus.objects.get(device_id='d000')
+    if devicestatus.switch==0:
+        devicestatus.switch=1
+    else:
+        devicestatus.switch=0
+    devicestatus.save()
+    return HttpResponse(str(devicestatus.switch))

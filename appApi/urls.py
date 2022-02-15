@@ -8,4 +8,5 @@ urlpatterns = [
     path('updatetemp/<str:temp>', views.updatetemp),
     path('updatehumid/<str:humid>',views.updatehumid),
     path('updatemoist/<str:moist>',views.updatemoist),
+    path('toggle',views.toggleswitch),
 ]
