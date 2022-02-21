@@ -9,5 +9,6 @@ urlpatterns = [
     path('updatehumid/<str:humid>',views.updatehumid),
     path('updatemoist/<str:moist>',views.updatemoist),
     path('toggle',views.toggleswitch),
-    path('getpumpstat',views.getpumpstat)
+    path('getpumpstat',views.getpumpstat),
+    path('getpumpjson',views.getpumpjson)
 ]
