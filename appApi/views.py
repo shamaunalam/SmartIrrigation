@@ -39,3 +39,7 @@ def toggleswitch(request):
         devicestatus.switch=0
     devicestatus.save()
     return HttpResponse(str(devicestatus.switch))
+
+def getpumpstat(request):
+    devicestatus = DeviceStatus.objects.get(device_id='d000')
+    return HttpResponse(str(devicestatus.switch))
