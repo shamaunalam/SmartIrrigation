@@ -1,5 +1,6 @@
 from django.shortcuts import render,HttpResponse
 from .models import DeviceStatus
+from django.http.response import JsonResponse
 # Create your views here.
 def gettemp(request):
     devicestatus = DeviceStatus.objects.get(device_id='d000') 
@@ -42,4 +43,4 @@ def toggleswitch(request):
 
 def getpumpstat(request):
     devicestatus = DeviceStatus.objects.get(device_id='d000')
-    return HttpResponse(str(devicestatus.switch))
+    return JsonResponse({'switch':str(devicestatus.switch)})
